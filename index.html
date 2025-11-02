@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App (Tailwind + Custom CSS)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 min-h-screen flex items-center justify-center">
+
+  <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl p-6">
+    <h1 class="text-3xl font-bold text-center text-purple-600 mb-6">To-Do-App</h1>
+
+    <div class="flex mb-4">
+      <input 
+        id="todo"
+        onkeydown="addTodoEnter(event)"
+        type="text" 
+        placeholder="Write something..."
+        class="flex-1 border-2 border-purple-400 rounded-l-lg px-4 py-2 outline-none focus:border-purple-600"
+      />
+      <button 
+        onclick="addTodo()"
+        class="bg-purple-600 text-white px-5 py-2 rounded-r-lg hover:bg-purple-700 transition-all"
+      >
+        Add
+      </button>
+    </div>
+
+    <ul id="list" class="space-y-3"></ul>
+
+    <button 
+      onclick="deleteAll()" 
+      class="w-full mt-6 bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition-all"
+    >
+      Delete All
+    </button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
